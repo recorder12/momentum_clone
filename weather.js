@@ -66,10 +66,15 @@ function loadCoords(){
     }
 }
 
+function reCheckLocation(){
+    localStorage.removeItem("coords");
+    loadCoords();
+}
+
 
 function init(){
     loadCoords();
-
+    window.addEventListener("load", reCheckLocation);
 }
 
 init();
